@@ -19,11 +19,13 @@ import common
 import re
 
 def FullOTA_Assertions(info):
+  OTA_MaintainerSection(info)
   AddVendorAssertion(info)
   AddModemAssertion(info)
   return
 
 def IncrementalOTA_Assertions(info):
+  OTA_MaintainerSection(info)
   AddVendorAssertion(info)
   AddModemAssertion(info)
   return
@@ -33,6 +35,12 @@ def AddVendorAssertion(info):
 abort("Error: Vendor partition doesn\'t exist!"););'
   info.script.AppendExtra(cmd)
   return
+
+def OTA_MaintainerSection(info):
+    info.script.AppendExtra('ui_print(" quick fact: this might brick your phone ");')
+    info.script.AppendExtra('ui_print("   ");')
+    info.script.AppendExtra('ui_print("ShapeShift OS OFFICIAL FOR OnePlus 5t");')
+
 
 def AddModemAssertion(info):
   android_info = info.input_zip.read("OTA/android-info.txt")
