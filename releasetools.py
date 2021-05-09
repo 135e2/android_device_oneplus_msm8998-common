@@ -39,7 +39,7 @@ abort("Error: Vendor partition doesn\'t exist!"););'
 def OTA_MaintainerSection(info):
     info.script.AppendExtra('ui_print(" quick fact: this might brick your phone ");')
     info.script.AppendExtra('ui_print("   ");')
-    info.script.AppendExtra('ui_print("ShapeShift OS OFFICIAL FOR OnePlus 5t");')
+    info.script.AppendExtra('ui_print("ShapeShift OS Unoffical for Oneplus 5/5T);')
 
 
 def AddModemAssertion(info):
